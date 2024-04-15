@@ -1,82 +1,32 @@
-# Unity ML-Agents Toolkit
+## Setup
+- Follow the steps [from the official release 21 docs](https://github.com/Unity-Technologies/ml-agents/blob/release_21_docs/docs/Installation.md).
+- Use Python 3.11.3
+- Use TensorBoard 2.16.2 or above
+  
+## Start training
+- In console, go to [aljv-train](aljv-train) path
+- To start a new training session with the default config file: 
+```console
+mlagents-learn --run-id=IDNAME
+```
+- To resume a training:
+```console
+mlagents-learn --run-id=IDNAME --resume
+```
+- To override a training:
+```console
+mlagents-learn --run-id=IDNAME --force
+```
+- To train a model with a custom config file add its path:
+```console
+mlagents-learn config/config.yaml --run-id=IDNAME 
+```
+- To open a TensorBoard session for data analytics:
+```console
+tensorboard --logdir results
+```
 
-[![docs badge](https://img.shields.io/badge/docs-reference-blue.svg)](https://github.com/Unity-Technologies/ml-agents/tree/release_21_docs/docs/)
-
-[![license badge](https://img.shields.io/badge/license-Apache--2.0-green.svg)](../LICENSE.md)
-
-([latest release](https://github.com/Unity-Technologies/ml-agents/releases/tag/latest_release))
-([all releases](https://github.com/Unity-Technologies/ml-agents/releases))
-
-**The Unity Machine Learning Agents Toolkit** (ML-Agents) is an open-source
-project that enables games and simulations to serve as environments for
-training intelligent agents. We provide implementations (based on PyTorch)
-of state-of-the-art algorithms to enable game developers and hobbyists to easily
-train intelligent agents for 2D, 3D and VR/AR games. Researchers can also use the
-provided simple-to-use Python API to train Agents using reinforcement learning,
-imitation learning, neuroevolution, or any other methods. These trained agents can be
-used for multiple purposes, including controlling NPC behavior (in a variety of
-settings such as multi-agent and adversarial), automated testing of game builds
-and evaluating different game design decisions pre-release. The ML-Agents
-Toolkit is mutually beneficial for both game developers and AI researchers as it
-provides a central platform where advances in AI can be evaluated on Unity’s
-rich environments and then made accessible to the wider research and game
-developer communities.
-
-## Features
-- 17+ [example Unity environments](Learning-Environment-Examples.md)
-- Support for multiple environment configurations and training scenarios
-- Flexible Unity SDK that can be integrated into your game or custom Unity scene
-- Support for training single-agent, multi-agent cooperative, and multi-agent
-  competitive scenarios via several Deep Reinforcement Learning algorithms (PPO, SAC, MA-POCA, self-play).
-- Support for learning from demonstrations through two Imitation Learning algorithms (BC and GAIL).
-- Quickly and easily add your own [custom training algorithm](Python-Custom-Trainer-Plugin.md) and/or components.
-- Easily definable Curriculum Learning scenarios for complex tasks
-- Train robust agents using environment randomization
-- Flexible agent control with On Demand Decision Making
-- Train using multiple concurrent Unity environment instances
-- Utilizes the [Unity Inference Engine](Unity-Inference-Engine.md) to
-  provide native cross-platform support
-- Unity environment [control from Python](Python-LLAPI.md)
-- Wrap Unity learning environments as a [gym](Python-Gym-API.md) environment
-- Wrap Unity learning environments as a [PettingZoo](Python-PettingZoo-API.md) environment
-
-See our [ML-Agents Overview](ML-Agents-Overview.md) page for detailed
-descriptions of all these features. Or go straight to our [web docs](https://unity-technologies.github.io/ml-agents/).
-## Releases & Documentation
-
-**Our latest, stable release is `Release 20`. Click
-[here](Getting-Started.md)
-to get started with the latest release of ML-Agents.**
-
-**You can also check out our new [web docs](https://unity-technologies.github.io/ml-agents/)!**
-
-The table below lists all our releases, including our `main` branch which is
-under active development and may be unstable. A few helpful guidelines:
-- The [Versioning page](Versioning.md) overviews how we manage our GitHub
-  releases and the versioning process for each of the ML-Agents components.
-- The [Releases page](https://github.com/Unity-Technologies/ml-agents/releases)
-  contains details of the changes between releases.
-- The [Migration page](Migrating.md) contains details on how to upgrade
-  from earlier releases of the ML-Agents Toolkit.
-- The **Documentation** links in the table below include installation and usage
-  instructions specific to each release. Remember to always use the
-  documentation that corresponds to the release version you're using.
-- The `com.unity.ml-agents` package is [verified](https://docs.unity3d.com/2020.1/Documentation/Manual/pack-safe.html)
-  for Unity 2020.1 and later. Verified packages releases are numbered 1.0.x.
-
-|        **Version**         | **Release Date** | **Source** | **Documentation** | **Download** | **Python Package** | **Unity Package** |
-|:--------------------------:|:------:|:-------------:|:-------:|:------------:|:------------:|:------------:|
-| **develop (unstable)** | -- | [source](https://github.com/Unity-Technologies/ml-agents/tree/develop) | [docs](https://unity-technologies.github.io/ml-agents/) | [download](https://github.com/Unity-Technologies/ml-agents/archive/develop.zip) | -- | -- |
-| **Release 21** | **October 9, 2023** | **[source](https://github.com/Unity-Technologies/ml-agents/tree/release_21)** | **[docs](https://unity-technologies.github.io/ml-agents/)** | **[download](https://github.com/Unity-Technologies/ml-agents/archive/release_21.zip)** | **[1.0.0](https://pypi.org/project/mlagents/1.0.0/)** | **[3.0.0](https://docs.unity3d.com/Packages/com.unity.ml-agents@3.0/manual/index.html)** |
-
-
-If you are a researcher interested in a discussion of Unity as an AI platform,
-see a pre-print of our
-[reference paper on Unity and the ML-Agents Toolkit](https://arxiv.org/abs/1809.02627).
-
-If you use Unity or the ML-Agents Toolkit to conduct research, we ask that you
-cite the following paper as a reference:
-
+## References:
 ```
 @article{juliani2020,
   title={Unity: A general platform for intelligent agents},
@@ -86,34 +36,13 @@ cite the following paper as a reference:
   year={2020}
 }
 ```
-
-Additionally, if you use the MA-POCA trainer in your research, we ask that you
-cite the following paper as a reference:
-
-```
-@article{cohen2022,
-  title={On the Use and Misuse of Absorbing States in Multi-agent Reinforcement Learning},
-  author={Cohen, Andrew and Teng, Ervin and Berges, Vincent-Pierre and Dong, Ruo-Ping and Henry, Hunter and Mattar, Marwan and Zook, Alexander and Ganguly, Sujoy},
-  journal={RL in Games Workshop AAAI 2022},
-  url={http://aaai-rlg.mlanctot.info/papers/AAAI22-RLG_paper_32.pdf},
-  year={2022}
-}
-```
-
-
-
 ## Additional Resources
 
-We have a Unity Learn course,
+Unity Learn course,
 [ML-Agents: Hummingbirds](https://learn.unity.com/course/ml-agents-hummingbirds),
 that provides a gentle introduction to Unity and the ML-Agents Toolkit.
 
-We've also partnered with
-[CodeMonkeyUnity](https://www.youtube.com/c/CodeMonkeyUnity) to create a
-[series of tutorial videos](https://www.youtube.com/playlist?list=PLzDRvYVwl53vehwiN_odYJkPBzcqFw110)
-on how to implement and use the ML-Agents Toolkit.
-
-We have also published a series of blog posts that are relevant for ML-Agents:
+Blog posts that are relevant for ML-Agents:
 
 - (July 12, 2021)
   [ML-Agents plays Dodgeball](https://blog.unity.com/technology/ml-agents-plays-dodgeball)
@@ -161,42 +90,3 @@ We have also published a series of blog posts that are relevant for ML-Agents:
   ([multi-armed bandit](https://blogs.unity3d.com/2017/06/26/unity-ai-themed-blog-entries/)
   and
   [Q-learning](https://blogs.unity3d.com/2017/08/22/unity-ai-reinforcement-learning-with-q-learning/))
-
-### More from Unity
-
-- [Unity Sentis](https://unity.com/products/sentis)
-- [Introductin Unity Muse and Sentis](https://blog.unity.com/engine-platform/introducing-unity-muse-and-unity-sentis-ai)
-
-## Community and Feedback
-
-The ML-Agents Toolkit is an open-source project and we encourage and welcome
-contributions. If you wish to contribute, be sure to review our
-[contribution guidelines](CONTRIBUTING.md) and
-[code of conduct](CODE_OF_CONDUCT.md).
-
-For problems with the installation and setup of the ML-Agents Toolkit, or
-discussions about how to best setup or train your agents, please create a new
-thread on the
-[Unity ML-Agents forum](https://forum.unity.com/forums/ml-agents.453/) and make
-sure to include as much detail as possible. If you run into any other problems
-using the ML-Agents Toolkit or have a specific feature request, please
-[submit a GitHub issue](https://github.com/Unity-Technologies/ml-agents/issues).
-
-Please tell us which samples you would like to see shipped with the ML-Agents Unity
-package by replying to
-[this forum thread](https://forum.unity.com/threads/feedback-wanted-shipping-sample-s-with-the-ml-agents-package.1073468/).
-
-
-Your opinion matters a great deal to us. Only by hearing your thoughts on the
-Unity ML-Agents Toolkit can we continue to improve and grow. Please take a few
-minutes to
-[let us know about it](https://unitysoftware.co1.qualtrics.com/jfe/form/SV_55pQKCZ578t0kbc).
-
-For any other questions or feedback, connect directly with the ML-Agents team at
-ml-agents@unity3d.com.
-
-## Privacy
-
-In order to improve the developer experience for Unity ML-Agents Toolkit, we have added in-editor analytics.
-Please refer to "Information that is passively collected by Unity" in the
-[Unity Privacy Policy](https://unity3d.com/legal/privacy-policy).
