@@ -1,32 +1,59 @@
 {
-    "Basic": {
+    "ALJV": {
         "checkpoints": [
             {
-                "steps": 499978,
-                "file_path": "results\\VER1.0\\Basic\\Basic-499978.onnx",
-                "reward": -5.740364422852343,
-                "creation_time": 1713106526.8154624,
+                "steps": 1999914,
+                "file_path": "results\\TEST\\ALJV\\ALJV-1999914.onnx",
+                "reward": 954.5804973853003,
+                "creation_time": 1713180536.2543297,
                 "auxillary_file_paths": [
-                    "results\\VER1.0\\Basic\\Basic-499978.pt"
+                    "results\\TEST\\ALJV\\ALJV-1999914.pt"
                 ]
             },
             {
-                "steps": 500106,
-                "file_path": "results\\VER1.0\\Basic\\Basic-500106.onnx",
-                "reward": -5.740364422852343,
-                "creation_time": 1713106526.8709872,
+                "steps": 2999981,
+                "file_path": "results\\TEST\\ALJV\\ALJV-2999981.onnx",
+                "reward": 976.1419844931745,
+                "creation_time": 1713181799.2999423,
                 "auxillary_file_paths": [
-                    "results\\VER1.0\\Basic\\Basic-500106.pt"
+                    "results\\TEST\\ALJV\\ALJV-2999981.pt"
+                ]
+            },
+            {
+                "steps": 3999914,
+                "file_path": "results\\TEST\\ALJV\\ALJV-3999914.onnx",
+                "reward": 934.4202931817921,
+                "creation_time": 1713183081.1382213,
+                "auxillary_file_paths": [
+                    "results\\TEST\\ALJV\\ALJV-3999914.pt"
+                ]
+            },
+            {
+                "steps": 4999950,
+                "file_path": "results\\TEST\\ALJV\\ALJV-4999950.onnx",
+                "reward": 908.2953973207901,
+                "creation_time": 1713184370.3248293,
+                "auxillary_file_paths": [
+                    "results\\TEST\\ALJV\\ALJV-4999950.pt"
+                ]
+            },
+            {
+                "steps": 5097647,
+                "file_path": "results\\TEST\\ALJV\\ALJV-5097647.onnx",
+                "reward": null,
+                "creation_time": 1713184495.1074884,
+                "auxillary_file_paths": [
+                    "results\\TEST\\ALJV\\ALJV-5097647.pt"
                 ]
             }
         ],
         "final_checkpoint": {
-            "steps": 500106,
-            "file_path": "results\\VER1.0\\Basic.onnx",
-            "reward": -5.740364422852343,
-            "creation_time": 1713106526.8709872,
+            "steps": 5097647,
+            "file_path": "results\\TEST\\ALJV.onnx",
+            "reward": null,
+            "creation_time": 1713184495.1074884,
             "auxillary_file_paths": [
-                "results\\VER1.0\\Basic\\Basic-500106.pt"
+                "results\\TEST\\ALJV\\ALJV-5097647.pt"
             ]
         }
     },

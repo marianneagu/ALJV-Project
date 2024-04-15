@@ -7,6 +7,8 @@ using Unity.MLAgents.Actuators;
 
 public class AgentBehavoir : Agent
 {
+    [SerializeField] private bool heuristic;
+    [SerializeField] private bool inTrain;
     [SerializeField] private Transform targetTransform;
     private Transform agentTransform;
     private float moveForward;
@@ -16,9 +18,10 @@ public class AgentBehavoir : Agent
     private float direction;
 
     private float distanceToTarget;
-
+    private float dotProductAgentTargetOrientation;
 
     [SerializeField] private float moveSpeed = 1f;
+    [SerializeField] private float rotationSpeed = 1f;
 
     private void Start()
     {
@@ -27,7 +30,7 @@ public class AgentBehavoir : Agent
 
     private void Update()
     {
-        if(distanceToTarget > 10f)
+        if(inTrain && distanceToTarget > 10f)
         {
             Debug.Log("Too far from target");
             SetReward(-1);
@@ -35,20 +38,56 @@ public class AgentBehavoir : Agent
         }
 
         distanceToTarget = Vector3.Distance(agentTransform.localPosition, targetTransform.localPosition);
-        // reward that increases as the agent gets closer to the target
-        AddReward(-distanceToTarget / 10);
+        // Reward that increases as the agent gets closer to the target
+        if(inTrain)
+        {
+            AddReward(-distanceToTarget / 10);
+        }
+        
 
-        //Debug.Log("Cumulative Reward: " + GetCumulativeReward());
+        MoveAgent();
+        RotateAgent();
+        
 
-        agentTransform.localPosition += agentTransform.forward * moveForward * moveSpeed * Time.deltaTime;
-        agentTransform.localPosition -= agentTransform.forward * moveBackward * moveSpeed * Time.deltaTime;
-        agentTransform.localPosition -= agentTransform.right * moveLeft * moveSpeed * Time.deltaTime;
-        agentTransform.localPosition += agentTransform.right * moveRight * moveSpeed * Time.deltaTime;
+        // Dot product of the agent's forward vector and the vector pointing to the target
+        dotProductAgentTargetOrientation = Vector3.Dot(agentTransform.forward, (targetTransform.localPosition - agentTransform.localPosition).normalized);
+    }
+
+    private void MoveAgent()
+    {
+        if(heuristic)
+        {
+            moveForward = Input.GetAxis("Vertical");
+            moveBackward = -Input.GetAxis("Vertical");
+            moveLeft = -Input.GetAxis("Horizontal");
+            moveRight = Input.GetAxis("Horizontal");
+        }
+        else
+        {
+            agentTransform.localPosition += agentTransform.forward * moveForward * moveSpeed * Time.deltaTime;
+            agentTransform.localPosition -= agentTransform.forward * moveBackward * moveSpeed * Time.deltaTime;
+            agentTransform.localPosition -= agentTransform.right * moveLeft * moveSpeed * Time.deltaTime;
+            agentTransform.localPosition += agentTransform.right * moveRight * moveSpeed * Time.deltaTime;
+        }
+    }
+
+    private void RotateAgent()
+    {
+        if(heuristic)
+        {
+            direction = Input.GetAxis("Horizontal");
+        }
+
+        agentTransform.Rotate(0, direction * rotationSpeed * Time.deltaTime, 0);
     }
 
     public override void OnEpisodeBegin()
     {
-        SetReward(0);
+        if(inTrain)
+        {
+            SetReward(0);
+        }
+        
         transform.localPosition = new Vector3(0.0f, transform.position.y, 0.0f);
         targetTransform.localPosition = new Vector3(Random.Range(-8f, 8f), targetTransform.position.y, Random.Range(-8f, 8f));
     }
@@ -58,6 +97,7 @@ public class AgentBehavoir : Agent
         sensor.AddObservation(agentTransform.localPosition);
         sensor.AddObservation(targetTransform.localPosition);
         sensor.AddObservation(distanceToTarget);
+        //sensor.AddObservation(dotProductAgentTargetOrientation);
     }
 
     public override void OnActionReceived(ActionBuffers actions)
@@ -71,9 +111,13 @@ public class AgentBehavoir : Agent
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Target"))
+        if(!inTrain)
         {
-            AddReward(100);
+            return;
+        }
+        else if(other.CompareTag("target"))
+        {
+            AddReward(1000);
             EndEpisode();
         }
     }
