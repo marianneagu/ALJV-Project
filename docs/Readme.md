@@ -4,7 +4,7 @@
 - Use TensorBoard 2.16.2 or above
   
 ## Start training
-- In console, go to [aljv-train](aljv-train) path
+- In console, go to [aljv-train](../aljv-train/) path
 - To start a new training session with the default config file: 
 ```console
 mlagents-learn --run-id=IDNAME
