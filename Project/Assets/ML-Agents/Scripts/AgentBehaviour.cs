@@ -4,6 +4,7 @@ using UnityEngine;
 using Unity.MLAgents;
 using Unity.MLAgents.Sensors;
 using Unity.MLAgents.Actuators;
+using ALJV;
 
 public class AgentBehavoir : Agent
 {
@@ -60,7 +61,7 @@ public class AgentBehavoir : Agent
         }
         else
         {
-            agentTransform.localPosition += agentTransform.forward * moveForward * moveSpeed * Time.deltaTime;
+            agentTransform.localPosition += agentTransform.forward * Utils.ReLU(moveForward) * moveSpeed * Time.deltaTime;
             //agentTransform.localPosition -= agentTransform.right * moveLeft * moveSpeed * Time.deltaTime;
             //agentTransform.localPosition += agentTransform.right * moveRight * moveSpeed * Time.deltaTime;
         }
