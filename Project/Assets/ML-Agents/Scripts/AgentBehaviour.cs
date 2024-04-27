@@ -18,7 +18,6 @@ public class AgentBehavoir : Agent
     private float direction;
 
     private float distanceToTarget;
-    private float dotProductAgentTargetOrientation;
 
     [SerializeField] private float moveSpeed = 1f;
     [SerializeField] private float rotationSpeed = 1f;
@@ -48,9 +47,6 @@ public class AgentBehavoir : Agent
         MoveAgent();
         RotateAgent();
         
-
-        // Dot product of the agent's forward vector and the vector pointing to the target
-        dotProductAgentTargetOrientation = Vector3.Dot(agentTransform.forward, (targetTransform.localPosition - agentTransform.localPosition).normalized);
     }
 
     private void MoveAgent()
@@ -65,9 +61,8 @@ public class AgentBehavoir : Agent
         else
         {
             agentTransform.localPosition += agentTransform.forward * moveForward * moveSpeed * Time.deltaTime;
-            agentTransform.localPosition -= agentTransform.forward * moveBackward * moveSpeed * Time.deltaTime;
-            agentTransform.localPosition -= agentTransform.right * moveLeft * moveSpeed * Time.deltaTime;
-            agentTransform.localPosition += agentTransform.right * moveRight * moveSpeed * Time.deltaTime;
+            //agentTransform.localPosition -= agentTransform.right * moveLeft * moveSpeed * Time.deltaTime;
+            //agentTransform.localPosition += agentTransform.right * moveRight * moveSpeed * Time.deltaTime;
         }
     }
 
@@ -97,16 +92,14 @@ public class AgentBehavoir : Agent
         sensor.AddObservation(agentTransform.localPosition);
         sensor.AddObservation(targetTransform.localPosition);
         sensor.AddObservation(distanceToTarget);
-        //sensor.AddObservation(dotProductAgentTargetOrientation);
     }
 
     public override void OnActionReceived(ActionBuffers actions)
     {
         moveForward = actions.ContinuousActions[0];
-        moveBackward = actions.ContinuousActions[1];
-        moveLeft = actions.ContinuousActions[2];
-        moveRight = actions.ContinuousActions[3];
-        direction = actions.ContinuousActions[4];
+        //moveLeft = actions.ContinuousActions[1];
+        //moveRight = actions.ContinuousActions[2];
+        direction = actions.ContinuousActions[1];
     }
 
     private void OnTriggerEnter(Collider other)
