@@ -31,11 +31,13 @@ TagManager:
   - purpleGoal
   - tile
   - jumpObstacle
+  - crawl
+  - crawl_wall
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Detectable
   - Water
   - UI
   - 
