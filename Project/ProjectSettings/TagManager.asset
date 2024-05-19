@@ -30,6 +30,7 @@ TagManager:
   - purpleAgent
   - purpleGoal
   - tile
+  - jumpObstacle
   layers:
   - Default
   - TransparentFX

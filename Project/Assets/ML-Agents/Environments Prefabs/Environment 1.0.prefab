@@ -728,12 +728,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BrainParameters:
-    VectorObservationSize: 7
+    VectorObservationSize: 8
     NumStackedVectorObservations: 1
     m_ActionSpec:
       m_NumContinuousActions: 2
-      BranchSizes: 
-    VectorActionSize: 02000000
+      BranchSizes: 02000000
+    VectorActionSize: 
     VectorActionDescriptions: []
     VectorActionSpaceType: 1
     hasUpgradedBrainParametersWithActionSpec: 1
@@ -765,6 +765,8 @@ MonoBehaviour:
   heuristic: 0
   inTrain: 1
   targetTransform: {fileID: 5864251415663141124}
+  agentRigidbody: {fileID: 0}
+  jumpVectorForce: {x: 0, y: 6, z: 1}
   moveSpeed: 2
   rotationSpeed: 250
 --- !u!114 &4644309933515945962
@@ -805,9 +807,9 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 0
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!1 &7142746013333850370
 GameObject:
