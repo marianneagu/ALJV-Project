@@ -30,11 +30,13 @@ TagManager:
   - purpleAgent
   - purpleGoal
   - tile
+  - crawl
+  - crawl_wall
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Detectable
   - Water
   - UI
   - 
