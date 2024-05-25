@@ -38,6 +38,7 @@ public class AgentBehavoirCrawl : Agent
         if(inTrain && distanceToTarget > 20f)
         {
             Debug.Log("Too far from target");
+            SetReward(-1);
             EndEpisode();
         }
 
@@ -45,12 +46,17 @@ public class AgentBehavoirCrawl : Agent
         // Reward that increases as the agent gets closer to the target
         if(inTrain)
         {
-            AddReward(-distanceToTarget);
+            AddReward(-distanceToTarget / 10);
         }
         
 
         MoveAgent();
         RotateAgent();
+
+        if(Input.GetKeyDown(KeyCode.C))
+        {
+            isCrawling = !isCrawling;
+        }
 
         if(crawlAction == 1)
         {
@@ -93,16 +99,9 @@ public class AgentBehavoirCrawl : Agent
         if(heuristic)
         {
             moveForward = Input.GetAxis("Vertical");
-            moveBackward = -Input.GetAxis("Vertical");
-            moveLeft = -Input.GetAxis("Horizontal");
-            moveRight = Input.GetAxis("Horizontal");
         }
-        else
-        {
-            agentTransform.localPosition += agentTransform.forward * Utils.ReLU(moveForward) * moveSpeed * Time.deltaTime;
-            //agentTransform.localPosition -= agentTransform.right * moveLeft * moveSpeed * Time.deltaTime;
-            //agentTransform.localPosition += agentTransform.right * moveRight * moveSpeed * Time.deltaTime;
-        }
+
+        agentTransform.localPosition += agentTransform.forward * Utils.ReLU(moveForward) * moveSpeed * Time.deltaTime;
     }
 
     private void RotateAgent()
@@ -180,7 +179,7 @@ public class AgentBehavoirCrawl : Agent
         }
         else if(other.CompareTag("target"))
         {
-            AddReward(10000);
+            AddReward(1000);
             Debug.Log("Target reached!");
             EndEpisode();
         }
