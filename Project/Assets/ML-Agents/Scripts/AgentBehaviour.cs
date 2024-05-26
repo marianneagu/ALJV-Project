@@ -66,8 +66,6 @@ public class AgentBehavoir : Agent
         {
             moveForward = Input.GetAxis("Vertical");
             moveBackward = -Input.GetAxis("Vertical");
-            moveLeft = -Input.GetAxis("Horizontal");
-            moveRight = Input.GetAxis("Horizontal");
         }
 
         if(agentOnGround)
@@ -187,6 +185,7 @@ public class AgentBehavoir : Agent
         else if(other.CompareTag("target"))
         {
             AddReward(1000);
+            Debug.Log("Reached target");
             EndEpisode();
         }
         else if(other.CompareTag("wall"))
