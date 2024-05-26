@@ -20,14 +20,14 @@ behaviors:
     reward_signals:
       extrinsic:
         gamma: 0.995
-        strength: 1.0
+        strength: 0.5
       gail:
         strength: 0.5
-        demo_path: TrapsDemo/TrapsDemo.demo
+        demo_path: config/TrapsDemos/TrapsDemo.demo
     behavioral_cloning:
       strength: 0.5
-      demo_path: TrapsDemo/TrapsDemo.demo
+      demo_path: config/TrapsDemos/TrapsDemo.demo
     keep_checkpoints: 5
-    max_steps: 3000000
+    max_steps: 30000000
     time_horizon: 1000
-    summary_freq: 30000
+    summary_freq: 50000

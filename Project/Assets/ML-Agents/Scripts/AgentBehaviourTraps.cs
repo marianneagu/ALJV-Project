@@ -19,6 +19,7 @@ public class AgentBehavoirTraps : Agent
     private float direction;
 
     private float distanceToTarget;
+    private bool isTrapped;
 
     [SerializeField] private float moveSpeed = 1f;
     [SerializeField] private float rotationSpeed = 1f;
@@ -35,7 +36,7 @@ public class AgentBehavoirTraps : Agent
         // Reward that increases as the agent gets closer to the target
         if(inTrain)
         {
-            AddReward(-distanceToTarget / 10);
+            AddReward(-distanceToTarget / 25);
         }
         
 
@@ -83,6 +84,7 @@ public class AgentBehavoirTraps : Agent
         }
         transform.localPosition = new Vector3(0.0f, transform.position.y, 0.0f);
         targetTransform.localPosition = new Vector3(valueX, targetTransform.position.y, valueZ);
+        transform.Rotate(0, 0, 0);
     }
 
     public override void CollectObservations(VectorSensor sensor)
@@ -95,8 +97,6 @@ public class AgentBehavoirTraps : Agent
     public override void OnActionReceived(ActionBuffers actions)
     {
         moveForward = actions.ContinuousActions[0];
-        //moveLeft = actions.ContinuousActions[1];
-        //moveRight = actions.ContinuousActions[2];
         direction = actions.ContinuousActions[1];
     }
 
@@ -114,17 +114,23 @@ public class AgentBehavoirTraps : Agent
         }
         else if(other.CompareTag("wall"))
         {
+            AddReward(-1000);
             EndEpisode();
         }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "trap_wall")
+        if(collision.gameObject.tag == "trap_wall" && !isTrapped)
         {
-            AddReward(-1000);
+            isTrapped = true;
+            AddReward(-200);
             Debug.Log("Trap hit!");
-            EndEpisode();
         }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        isTrapped = false;
     }
 }

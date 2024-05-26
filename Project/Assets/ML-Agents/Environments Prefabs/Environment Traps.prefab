@@ -874,9 +874,9 @@ MonoBehaviour:
   agentParameters:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
-  MaxStep: 0
+  MaxStep: 100000
   heuristic: 0
-  inTrain: 0
+  inTrain: 1
   targetTransform: {fileID: 5705354276271873279}
   moveSpeed: 5
   rotationSpeed: 250

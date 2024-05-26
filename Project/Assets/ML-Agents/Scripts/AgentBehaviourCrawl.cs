@@ -23,6 +23,7 @@ public class AgentBehavoirCrawl : Agent
 
     [SerializeField] private bool isCrawling = false;
     private bool isInCrawlTrigger = false;
+    private bool isInWall = false;
 
 
     [SerializeField] private float moveSpeed = 1f;
@@ -35,13 +36,7 @@ public class AgentBehavoirCrawl : Agent
 
     private void Update()
     {
-        if(inTrain && distanceToTarget > 20f)
-        {
-            Debug.Log("Too far from target");
-            SetReward(-1);
-            EndEpisode();
-        }
-
+    
         distanceToTarget = Vector3.Distance(agentTransform.localPosition, targetTransform.localPosition);
         // Reward that increases as the agent gets closer to the target
         if(inTrain)
@@ -53,9 +48,15 @@ public class AgentBehavoirCrawl : Agent
         MoveAgent();
         RotateAgent();
 
-        if(Input.GetKeyDown(KeyCode.C))
+        if(Input.GetKey(KeyCode.C))
         {
-            isCrawling = !isCrawling;
+            isCrawling = true;
+            crawlAction = 1;
+        }
+        else
+        {
+            isCrawling = false;
+            crawlAction = 0;
         }
 
         if(crawlAction == 1)
@@ -102,6 +103,7 @@ public class AgentBehavoirCrawl : Agent
         }
 
         agentTransform.localPosition += agentTransform.forward * Utils.ReLU(moveForward) * moveSpeed * Time.deltaTime;
+        //agentTransform.gameObject.GetComponent<Rigidbody>().AddForce(agentTransform.forward * Utils.ReLU(moveForward) * moveSpeed * 0.1f);
     }
 
     private void RotateAgent()
@@ -120,13 +122,13 @@ public class AgentBehavoirCrawl : Agent
         {
             agentTransform.position = new Vector3(agentTransform.position.x, -0.25f, agentTransform.position.z);
             agentTransform.localScale = new Vector3(agentTransform.localScale.x, 0.5f, agentTransform.localScale.z);
-            moveSpeed = 0.5f;
+            moveSpeed = 3;
         }
-        else
+        else if(!isCrawling && !isInWall)
         {
             agentTransform.position = new Vector3(agentTransform.position.x, 0, agentTransform.position.z);
             agentTransform.localScale = new Vector3(agentTransform.localScale.x, 1, agentTransform.localScale.z);
-            moveSpeed = 2;
+            moveSpeed = 5;
         }
         
     }
@@ -198,6 +200,24 @@ public class AgentBehavoirCrawl : Agent
         if(other.CompareTag("crawl"))
         {
             isInCrawlTrigger = false;
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(!isCrawling && collision.gameObject.tag == "crawl_wall")
+        {
+            moveSpeed = 0;
+            isInWall = true;
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if(collision.gameObject.tag == "crawl_wall")
+        {
+            moveSpeed = 7;
+            isInWall = false;
         }
     }
 }

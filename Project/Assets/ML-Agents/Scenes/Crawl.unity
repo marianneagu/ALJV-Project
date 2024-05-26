@@ -2956,8 +2956,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1349637274}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 40, y: 100, z: 40}
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -40, y: 27, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3243,6 +3243,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 310944913705466857, guid: 63b8843e348a6674a8c9d57bd48b40ab,
+        type: 3}
+      propertyPath: heuristic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 310944913705466857, guid: 63b8843e348a6674a8c9d57bd48b40ab,
+        type: 3}
+      propertyPath: moveSpeed
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 310944913705466857, guid: 63b8843e348a6674a8c9d57bd48b40ab,
+        type: 3}
+      propertyPath: isCrawling
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1383233276673110465, guid: 63b8843e348a6674a8c9d57bd48b40ab,
         type: 3}
       propertyPath: m_UseGravity
@@ -3252,6 +3267,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsKinematic
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1383233276673110465, guid: 63b8843e348a6674a8c9d57bd48b40ab,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4389511319122499541, guid: 63b8843e348a6674a8c9d57bd48b40ab,
         type: 3}
