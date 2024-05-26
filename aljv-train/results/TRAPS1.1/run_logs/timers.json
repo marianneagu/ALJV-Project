@@ -1,0 +1,54 @@
+{
+    "name": "root",
+    "metadata": {
+        "timer_format_version": "0.1.0",
+        "start_time_seconds": "1716730709",
+        "python_version": "3.10.12 | packaged by Anaconda, Inc. | (main, Jul  5 2023, 19:01:18) [MSC v.1916 64 bit (AMD64)]",
+        "command_line_arguments": "C:\\Users\\jelly\\anaconda3\\envs\\mlagents\\Scripts\\mlagents-learn --run-id=TRAPS1.1 --resume",
+        "mlagents_version": "1.0.0",
+        "mlagents_envs_version": "1.0.0",
+        "communication_protocol_version": "1.5.0",
+        "pytorch_version": "2.2.2+cpu",
+        "numpy_version": "1.23.5",
+        "end_time_seconds": "1716730720"
+    },
+    "total": 10.914787499999989,
+    "count": 1,
+    "self": 0.00920849999999973,
+    "children": {
+        "run_training.setup": {
+            "total": 0.022803899999985333,
+            "count": 1,
+            "self": 0.022803899999985333
+        },
+        "TrainerController.start_learning": {
+            "total": 10.882775100000003,
+            "count": 1,
+            "self": 0.0001107000000502012,
+            "children": {
+                "TrainerController._reset_env": {
+                    "total": 10.802836099999979,
+                    "count": 1,
+                    "self": 10.802836099999979
+                },
+                "trainer_threads": {
+                    "total": 7.999999525054591e-07,
+                    "count": 1,
+                    "self": 7.999999525054591e-07
+                },
+                "TrainerController._save_models": {
+                    "total": 0.0798275000000217,
+                    "count": 1,
+                    "self": 0.0019244000000071537,
+                    "children": {
+                        "RLTrainer._checkpoint": {
+                            "total": 0.07790310000001455,
+                            "count": 1,
+                            "self": 0.07790310000001455
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

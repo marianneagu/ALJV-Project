@@ -1,0 +1,65 @@
+{
+    "ALJV": {
+        "checkpoints": [
+            {
+                "steps": 4999149,
+                "file_path": "results\\TRAPS1.0\\ALJV\\ALJV-4999149.onnx",
+                "reward": null,
+                "creation_time": 1716724405.664547,
+                "auxillary_file_paths": [
+                    "results\\TRAPS1.0\\ALJV\\ALJV-4999149.pt"
+                ]
+            },
+            {
+                "steps": 5621416,
+                "file_path": "results\\TRAPS1.0\\ALJV\\ALJV-5621416.onnx",
+                "reward": null,
+                "creation_time": 1716725131.9096222,
+                "auxillary_file_paths": [
+                    "results\\TRAPS1.0\\ALJV\\ALJV-5621416.pt"
+                ]
+            },
+            {
+                "steps": 5621416,
+                "file_path": "results\\TRAPS1.0\\ALJV\\ALJV-5621416.onnx",
+                "reward": null,
+                "creation_time": 1716725762.5504675,
+                "auxillary_file_paths": [
+                    "results\\TRAPS1.0\\ALJV\\ALJV-5621416.pt"
+                ]
+            },
+            {
+                "steps": 5621416,
+                "file_path": "results\\TRAPS1.0\\ALJV\\ALJV-5621416.onnx",
+                "reward": null,
+                "creation_time": 1716725791.7980945,
+                "auxillary_file_paths": [
+                    "results\\TRAPS1.0\\ALJV\\ALJV-5621416.pt"
+                ]
+            },
+            {
+                "steps": 5621416,
+                "file_path": "results\\TRAPS1.0\\ALJV\\ALJV-5621416.onnx",
+                "reward": null,
+                "creation_time": 1716725821.489971,
+                "auxillary_file_paths": [
+                    "results\\TRAPS1.0\\ALJV\\ALJV-5621416.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 5621416,
+            "file_path": "results\\TRAPS1.0\\ALJV.onnx",
+            "reward": null,
+            "creation_time": 1716725821.489971,
+            "auxillary_file_paths": [
+                "results\\TRAPS1.0\\ALJV\\ALJV-5621416.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "1.0.0",
+        "torch_version": "2.2.2+cpu"
+    }
+}

@@ -1,0 +1,38 @@
+{
+    "ALJV": {
+        "checkpoints": [
+            {
+                "steps": 1999721,
+                "file_path": "results\\TRAPS1.1\\ALJV\\ALJV-1999721.onnx",
+                "reward": null,
+                "creation_time": 1716730700.940825,
+                "auxillary_file_paths": [
+                    "results\\TRAPS1.1\\ALJV\\ALJV-1999721.pt"
+                ]
+            },
+            {
+                "steps": 1999721,
+                "file_path": "results\\TRAPS1.1\\ALJV\\ALJV-1999721.onnx",
+                "reward": null,
+                "creation_time": 1716730720.7685604,
+                "auxillary_file_paths": [
+                    "results\\TRAPS1.1\\ALJV\\ALJV-1999721.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 1999721,
+            "file_path": "results\\TRAPS1.1\\ALJV.onnx",
+            "reward": null,
+            "creation_time": 1716730720.7685604,
+            "auxillary_file_paths": [
+                "results\\TRAPS1.1\\ALJV\\ALJV-1999721.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "1.0.0",
+        "torch_version": "2.2.2+cpu"
+    }
+}
