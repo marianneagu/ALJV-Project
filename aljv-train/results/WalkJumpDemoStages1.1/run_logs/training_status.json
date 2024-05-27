@@ -1,0 +1,29 @@
+{
+    "ALJV": {
+        "checkpoints": [
+            {
+                "steps": 750539,
+                "file_path": "results\\WalkJumpDemoStages1.1\\ALJV\\ALJV-750539.onnx",
+                "reward": 997.000479221344,
+                "creation_time": 1716796320.654055,
+                "auxillary_file_paths": [
+                    "results\\WalkJumpDemoStages1.1\\ALJV\\ALJV-750539.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 750539,
+            "file_path": "results\\WalkJumpDemoStages1.1\\ALJV.onnx",
+            "reward": 997.000479221344,
+            "creation_time": 1716796320.654055,
+            "auxillary_file_paths": [
+                "results\\WalkJumpDemoStages1.1\\ALJV\\ALJV-750539.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "1.0.0",
+        "torch_version": "1.13.1+cu117"
+    }
+}

@@ -1,0 +1,74 @@
+{
+    "ALJV": {
+        "checkpoints": [
+            {
+                "steps": 999930,
+                "file_path": "results\\WalkJumpDemoStages1.2\\ALJV\\ALJV-999930.onnx",
+                "reward": -96.14136250813802,
+                "creation_time": 1716799794.550758,
+                "auxillary_file_paths": [
+                    "results\\WalkJumpDemoStages1.2\\ALJV\\ALJV-999930.pt"
+                ]
+            },
+            {
+                "steps": 1067647,
+                "file_path": "results\\WalkJumpDemoStages1.2\\ALJV\\ALJV-1067647.onnx",
+                "reward": -272.96544523239135,
+                "creation_time": 1716800027.781451,
+                "auxillary_file_paths": [
+                    "results\\WalkJumpDemoStages1.2\\ALJV\\ALJV-1067647.pt"
+                ]
+            },
+            {
+                "steps": 1999645,
+                "file_path": "results\\WalkJumpDemoStages1.2\\ALJV\\ALJV-1999645.onnx",
+                "reward": -213.11669295174735,
+                "creation_time": 1716802503.2120428,
+                "auxillary_file_paths": [
+                    "results\\WalkJumpDemoStages1.2\\ALJV\\ALJV-1999645.pt"
+                ]
+            },
+            {
+                "steps": 2999310,
+                "file_path": "results\\WalkJumpDemoStages1.2\\ALJV\\ALJV-2999310.onnx",
+                "reward": -199.94512344542005,
+                "creation_time": 1716805051.725432,
+                "auxillary_file_paths": [
+                    "results\\WalkJumpDemoStages1.2\\ALJV\\ALJV-2999310.pt"
+                ]
+            },
+            {
+                "steps": 3999546,
+                "file_path": "results\\WalkJumpDemoStages1.2\\ALJV\\ALJV-3999546.onnx",
+                "reward": -95.96722056554711,
+                "creation_time": 1716807609.3567352,
+                "auxillary_file_paths": [
+                    "results\\WalkJumpDemoStages1.2\\ALJV\\ALJV-3999546.pt"
+                ]
+            },
+            {
+                "steps": 4207162,
+                "file_path": "results\\WalkJumpDemoStages1.2\\ALJV\\ALJV-4207162.onnx",
+                "reward": -130.45791023008286,
+                "creation_time": 1716808212.6540058,
+                "auxillary_file_paths": [
+                    "results\\WalkJumpDemoStages1.2\\ALJV\\ALJV-4207162.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 4207162,
+            "file_path": "results\\WalkJumpDemoStages1.2\\ALJV.onnx",
+            "reward": -130.45791023008286,
+            "creation_time": 1716808212.6540058,
+            "auxillary_file_paths": [
+                "results\\WalkJumpDemoStages1.2\\ALJV\\ALJV-4207162.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "1.0.0",
+        "torch_version": "1.13.1+cu117"
+    }
+}

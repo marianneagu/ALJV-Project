@@ -1,0 +1,32 @@
+behaviors:
+    ALJV:
+        trainer_type: ppo
+        keep_checkpoints: 100
+        checkpoint_interval: 1000000
+        hyperparameters:
+            batch_size: 4096
+            buffer_size: 40960
+            learning_rate: 0.0003
+            beta: 0.005
+            epsilon: 0.2
+            lambd: 0.95
+            num_epoch: 3
+            learning_rate_schedule: linear
+        network_settings:
+            normalize: false
+            hidden_units: 512
+            num_layers: 4
+            vis_encode_type: simple
+        reward_signals:
+            extrinsic:
+                gamma: 0.99
+                strength: 1.0
+            gail:
+                strength: 0.0
+                demo_path: config/StageDemos/JumpStage.demo
+        behavioral_cloning:
+            strength: 1.0
+            demo_path: config/StageDemos/JumpStage.demo
+        max_steps: 30000000
+        time_horizon: 1000
+        summary_freq: 50000

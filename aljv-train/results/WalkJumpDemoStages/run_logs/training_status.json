@@ -1,0 +1,128 @@
+{
+    "ALJV": {
+        "checkpoints": [
+            {
+                "steps": 999436,
+                "file_path": "results\\FinalTrain\\ALJV\\ALJV-999436.onnx",
+                "reward": null,
+                "creation_time": 1716767546.0604818,
+                "auxillary_file_paths": [
+                    "results\\FinalTrain\\ALJV\\ALJV-999436.pt"
+                ]
+            },
+            {
+                "steps": 1999216,
+                "file_path": "results\\FinalTrain\\ALJV\\ALJV-1999216.onnx",
+                "reward": 186.35641288757324,
+                "creation_time": 1716770200.4472566,
+                "auxillary_file_paths": [
+                    "results\\FinalTrain\\ALJV\\ALJV-1999216.pt"
+                ]
+            },
+            {
+                "steps": 2008249,
+                "file_path": "results\\FinalTrain\\ALJV\\ALJV-2008249.onnx",
+                "reward": 45.84723726908366,
+                "creation_time": 1716770285.0524492,
+                "auxillary_file_paths": [
+                    "results\\FinalTrain\\ALJV\\ALJV-2008249.pt"
+                ]
+            },
+            {
+                "steps": 2013249,
+                "file_path": "results\\FinalTrain\\ALJV\\ALJV-2013249.onnx",
+                "reward": null,
+                "creation_time": 1716770661.5382023,
+                "auxillary_file_paths": [
+                    "results\\FinalTrain\\ALJV\\ALJV-2013249.pt"
+                ]
+            },
+            {
+                "steps": 2114092,
+                "file_path": "results\\FinalTrain\\ALJV\\ALJV-2114092.onnx",
+                "reward": -139.03488445281982,
+                "creation_time": 1716771144.6628654,
+                "auxillary_file_paths": [
+                    "results\\FinalTrain\\ALJV\\ALJV-2114092.pt"
+                ]
+            },
+            {
+                "steps": 2999007,
+                "file_path": "results\\FinalTrain\\ALJV\\ALJV-2999007.onnx",
+                "reward": -297.3795471191406,
+                "creation_time": 1716773731.0574324,
+                "auxillary_file_paths": [
+                    "results\\FinalTrain\\ALJV\\ALJV-2999007.pt"
+                ]
+            },
+            {
+                "steps": 3999595,
+                "file_path": "results\\FinalTrain\\ALJV\\ALJV-3999595.onnx",
+                "reward": -262.34681311249733,
+                "creation_time": 1716776400.5986214,
+                "auxillary_file_paths": [
+                    "results\\FinalTrain\\ALJV\\ALJV-3999595.pt"
+                ]
+            },
+            {
+                "steps": 4999390,
+                "file_path": "results\\FinalTrain\\ALJV\\ALJV-4999390.onnx",
+                "reward": -81.9151713848114,
+                "creation_time": 1716779072.8738997,
+                "auxillary_file_paths": [
+                    "results\\FinalTrain\\ALJV\\ALJV-4999390.pt"
+                ]
+            },
+            {
+                "steps": 5999343,
+                "file_path": "results\\FinalTrain\\ALJV\\ALJV-5999343.onnx",
+                "reward": 822.3322455883026,
+                "creation_time": 1716781750.3228788,
+                "auxillary_file_paths": [
+                    "results\\FinalTrain\\ALJV\\ALJV-5999343.pt"
+                ]
+            },
+            {
+                "steps": 6999180,
+                "file_path": "results\\FinalTrain\\ALJV\\ALJV-6999180.onnx",
+                "reward": 73.63708341121674,
+                "creation_time": 1716784439.0432036,
+                "auxillary_file_paths": [
+                    "results\\FinalTrain\\ALJV\\ALJV-6999180.pt"
+                ]
+            },
+            {
+                "steps": 7999557,
+                "file_path": "results\\FinalTrain\\ALJV\\ALJV-7999557.onnx",
+                "reward": -341.2828872203827,
+                "creation_time": 1716787124.8005888,
+                "auxillary_file_paths": [
+                    "results\\FinalTrain\\ALJV\\ALJV-7999557.pt"
+                ]
+            },
+            {
+                "steps": 8522333,
+                "file_path": "results\\FinalTrain\\ALJV\\ALJV-8522333.onnx",
+                "reward": -1524.1953315734863,
+                "creation_time": 1716788614.4208958,
+                "auxillary_file_paths": [
+                    "results\\FinalTrain\\ALJV\\ALJV-8522333.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 8522333,
+            "file_path": "results\\FinalTrain\\ALJV.onnx",
+            "reward": -1524.1953315734863,
+            "creation_time": 1716788614.4208958,
+            "auxillary_file_paths": [
+                "results\\FinalTrain\\ALJV\\ALJV-8522333.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "1.0.0",
+        "torch_version": "1.13.1+cu117"
+    }
+}

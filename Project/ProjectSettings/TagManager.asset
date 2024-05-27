@@ -33,6 +33,9 @@ TagManager:
   - jumpObstacle
   - crawl
   - crawl_wall
+  - trap_wall
+  - jump_wall
+  - jump_trigger
   layers:
   - Default
   - TransparentFX

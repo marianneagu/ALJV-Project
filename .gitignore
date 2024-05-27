@@ -32,6 +32,8 @@
 *.booproj
 *.svd
 *.pdb
+*.demo
+*.onnx
 
 # Unity3D generated meta files
 *.pidb.meta

@@ -11,6 +11,13 @@ public class GroundCheck : MonoBehaviour
         gameObject.GetComponent<MeshRenderer>().material.color = Color.green;
     }
 
+    private void OnTriggerStay(Collider other)
+    {
+        isGrounded = true;
+        gameObject.GetComponent<MeshRenderer>().material.color = Color.green;
+
+    }
+
     private void OnTriggerExit(Collider other)
     {
         isGrounded = false;
