@@ -1,0 +1,65 @@
+{
+    "ALJV": {
+        "checkpoints": [
+            {
+                "steps": 999586,
+                "file_path": "results\\CRAWL1.6\\ALJV\\ALJV-999586.onnx",
+                "reward": -1998.7225813865662,
+                "creation_time": 1716792599.525606,
+                "auxillary_file_paths": [
+                    "results\\CRAWL1.6\\ALJV\\ALJV-999586.pt"
+                ]
+            },
+            {
+                "steps": 1999872,
+                "file_path": "results\\CRAWL1.6\\ALJV\\ALJV-1999872.onnx",
+                "reward": null,
+                "creation_time": 1716794320.5020173,
+                "auxillary_file_paths": [
+                    "results\\CRAWL1.6\\ALJV\\ALJV-1999872.pt"
+                ]
+            },
+            {
+                "steps": 2999594,
+                "file_path": "results\\CRAWL1.6\\ALJV\\ALJV-2999594.onnx",
+                "reward": -4311.051495869954,
+                "creation_time": 1716796772.652916,
+                "auxillary_file_paths": [
+                    "results\\CRAWL1.6\\ALJV\\ALJV-2999594.pt"
+                ]
+            },
+            {
+                "steps": 3999047,
+                "file_path": "results\\CRAWL1.6\\ALJV\\ALJV-3999047.onnx",
+                "reward": -3530.2210388183594,
+                "creation_time": 1716799318.9049094,
+                "auxillary_file_paths": [
+                    "results\\CRAWL1.6\\ALJV\\ALJV-3999047.pt"
+                ]
+            },
+            {
+                "steps": 4396678,
+                "file_path": "results\\CRAWL1.6\\ALJV\\ALJV-4396678.onnx",
+                "reward": null,
+                "creation_time": 1716800424.0197582,
+                "auxillary_file_paths": [
+                    "results\\CRAWL1.6\\ALJV\\ALJV-4396678.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 4396678,
+            "file_path": "results\\CRAWL1.6\\ALJV.onnx",
+            "reward": null,
+            "creation_time": 1716800424.0197582,
+            "auxillary_file_paths": [
+                "results\\CRAWL1.6\\ALJV\\ALJV-4396678.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "1.0.0",
+        "torch_version": "2.2.2+cpu"
+    }
+}

@@ -20,9 +20,9 @@ behaviors:
     reward_signals:
       extrinsic:
         gamma: 0.995
-        strength: 0.5
+        strength: 1
       gail:
-        strength: 0.5
+        strength: 0.8
         demo_path: config/TrapsDemos/TrapsDemo.demo
     behavioral_cloning:
       strength: 0.5

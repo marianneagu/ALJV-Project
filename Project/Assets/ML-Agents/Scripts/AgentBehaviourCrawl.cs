@@ -24,6 +24,7 @@ public class AgentBehavoirCrawl : Agent
     [SerializeField] private bool isCrawling = false;
     private bool isInCrawlTrigger = false;
     private bool isInWall = false;
+    private float lastDistanceToTarget;
 
 
     [SerializeField] private float moveSpeed = 1f;
@@ -32,6 +33,7 @@ public class AgentBehavoirCrawl : Agent
     private void Start()
     {
         agentTransform = transform;
+        lastDistanceToTarget = Vector3.Distance(agentTransform.position, targetTransform.position);
     }
 
     private void Update()
@@ -41,6 +43,15 @@ public class AgentBehavoirCrawl : Agent
         // Reward that increases as the agent gets closer to the target
         if(inTrain)
         {
+            if(lastDistanceToTarget > distanceToTarget  )
+            {
+                AddReward(2f);
+            }
+            else if(lastDistanceToTarget < distanceToTarget)
+            {
+                AddReward(-5f);
+            }
+
             AddReward(-distanceToTarget / 10);
         }
         
@@ -48,16 +59,20 @@ public class AgentBehavoirCrawl : Agent
         MoveAgent();
         RotateAgent();
 
-        if(Input.GetKey(KeyCode.C))
+        if(heuristic)
         {
-            isCrawling = true;
-            crawlAction = 1;
+            if(Input.GetKey(KeyCode.C))
+            {
+                isCrawling = true;
+                crawlAction = 1;
+            }
+            else
+            {
+                isCrawling = false;
+                crawlAction = 0;
+            }
         }
-        else
-        {
-            isCrawling = false;
-            crawlAction = 0;
-        }
+        
 
         if(crawlAction == 1)
         {
@@ -74,23 +89,20 @@ public class AgentBehavoirCrawl : Agent
         {
             if(!isCrawling)
             {
-                AddReward(-5f);
-            }
-            else
-            {
-                AddReward(1f);
+                AddReward(-2.5f);
             }
         }
         else
         {
             if(isCrawling)
             {
-                AddReward(-5f);
+                AddReward(-2.5f);
             }
-            else
-            {
-                AddReward(1f);
-            }
+        }
+
+        if(GetCumulativeReward() <= -5000)
+        {
+            EndEpisode();
         }
         
     }
@@ -205,7 +217,7 @@ public class AgentBehavoirCrawl : Agent
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(!isCrawling && collision.gameObject.tag == "crawl_wall")
+        if(collision.gameObject.tag == "crawl_wall")
         {
             moveSpeed = 0;
             isInWall = true;
@@ -216,7 +228,7 @@ public class AgentBehavoirCrawl : Agent
     {
         if(collision.gameObject.tag == "crawl_wall")
         {
-            moveSpeed = 7;
+            moveSpeed = 5;
             isInWall = false;
         }
     }
