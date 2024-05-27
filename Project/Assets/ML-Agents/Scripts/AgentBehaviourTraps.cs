@@ -20,6 +20,7 @@ public class AgentBehavoirTraps : Agent
 
     private float distanceToTarget;
     private bool isTrapped;
+    private float lastDistanceToTarget;
 
     [SerializeField] private float moveSpeed = 1f;
     [SerializeField] private float rotationSpeed = 1f;
@@ -27,6 +28,7 @@ public class AgentBehavoirTraps : Agent
     private void Start()
     {
         agentTransform = transform;
+        lastDistanceToTarget = Vector3.Distance(agentTransform.position, targetTransform.position);
     }
 
     private void Update()
@@ -36,12 +38,25 @@ public class AgentBehavoirTraps : Agent
         // Reward that increases as the agent gets closer to the target
         if(inTrain)
         {
-            AddReward(-distanceToTarget / 25);
+            if(lastDistanceToTarget > distanceToTarget  )
+            {
+                AddReward(2f);
+            }
+            else if(lastDistanceToTarget < distanceToTarget)
+            {
+                AddReward(-5f);
+            }
+
+            AddReward(-distanceToTarget / 10);
         }
-        
 
         MoveAgent();
         RotateAgent();
+
+        if(GetCumulativeReward() <= -5000)
+        {
+            EndEpisode();
+        }
         
     }
 
